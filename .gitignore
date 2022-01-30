@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+localStorage.js
+studyingStates.js
+destructuring.js
+destructuringArrays.js
+destructuringObjects.js
