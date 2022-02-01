@@ -4,14 +4,15 @@ import FormSuccess from './FormSuccess';
 
 const Form = () => {
   // Por padrão, isSubmitted estará como false
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  // const [isSubmitted, setIsSubmitted] = useState(false)
 
-  function submitForm() {
-    setIsSubmitted(true)
-  }
+  // function submitForm() {
+  //   setIsSubmitted(true)
+  // }
 
   return <div>
-    {!isSubmitted ? (<FormSignUp submitForm={submitForm} />) : (<FormSuccess />)}
+    {/* {!isSubmitted ? (<FormSignUp submitForm={submitForm} />) : (<FormSuccess />)} */}
+    <FormSignUp />
   </div>;
 };
 

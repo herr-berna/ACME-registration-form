@@ -14,10 +14,3 @@ export default function validateInfo(values) {
 
   return errors
 }
-
-// fullname: '',
-// birthday: '',
-// cpf: '',
-// gender: 'm',
-// address: '', - não-obrigatório
-// status: 'active'

@@ -1,33 +1,53 @@
-import './App.css';
-import Form from './Form';
-
+import React from 'react';
+import { MainButton, SecButton, Title, Header, Footer } from './styles';
+// import Form from './Form';
+import GlobalStyle from './globalStyle';
+import addnew from './img/addnew.png';
+import search from './img/search.png'
 // Criando uma função para aplicar estilos globalmente
-function GlobalStyle() {
-  return (
-    <style global jsx>
-      {`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          background-color: #e7e7e7;
-        }
-
-        body {
-          font-family: 'Roboto', sans-serif;
-        }
-      `}
-    </style>
-  )
-}
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <GlobalStyle />
-      <Form />
+      <Header>
+
+      </Header>
+      <Title>
+        Bem-vindo,
+        <span>Usuário</span>
+        <p>Selecione uma opção para continuar.</p>
+      </Title>
+      <MainButton>
+        <img
+          src={addnew}
+          alt="Adicionar um novo paciente"
+          style={{
+            width: "56px",
+            marginLeft: "-24px",
+          }}
+        />
+        <span>Cadastrar novo paciente</span>
+      </MainButton>
+      <MainButton>
+        <img
+          src={search}
+          alt="Ver/editar pacientes"
+          style={{
+            width: "48px",
+            marginLeft: "-64px",
+            paddingRight: "6px"
+          }}
+        />
+        <span>Ver/editar pacientes</span>
+      </MainButton>
+      <SecButton>
+        <span>Sair</span>
+      </SecButton>
+      <Footer></Footer>
+      {/* <Form /> */}
     </div>
   );
 }
-
+document.getElementById('root')
 export default App;
