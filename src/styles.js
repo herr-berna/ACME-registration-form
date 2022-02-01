@@ -74,9 +74,30 @@ border-radius: 7px;
   }
 `;
 
+export const InputText = styled.div`
+padding-left: 18px;
+input {
+  border: 1px solid #D2E3EB;
+  color: #9FAAB8;
+  width: 90%;
+  height: 29px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  padding: 6px;
+}
+label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #012856;
+  display: block;
+  padding: 3px;
+}
+`
+
 export const Footer = styled.div`
 position: absolute;
-width: 360px;
+width: 100%;
 height: 17px;
 background-color: #012856;
 bottom: 0;
