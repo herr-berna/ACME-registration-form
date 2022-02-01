@@ -1,0 +1,23 @@
+form {
+  padding-left: 18px;
+}
+
+input,
+select {
+  border: 1px solid #D2E3EB;
+  color: #9FAAB8;
+  width: 90%;
+  height: 29px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #012856;
+  display: block;
+  padding: 3px;
+}

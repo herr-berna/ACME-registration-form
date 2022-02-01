@@ -1,11 +1,11 @@
 import React from 'react';
-import { MainButton, SecButton, Title, Header, Footer } from './styles';
+import { MainButton, SecButton, Title, Header, Footer } from '../styles/styles';
 // Importanto router para possibilitar a troca de telas
 // Routes era chamado de Switch
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import GlobalStyle from './globalStyle';
-import addnew from './img/addnew.png';
-import search from './img/search.png'
+import { Link } from 'react-router-dom';
+import GlobalStyle from '../styles/globalStyle';
+import addnew from '../img/addnew.png';
+import search from '../img/search.png'
 
 const Home = () => {
   return (

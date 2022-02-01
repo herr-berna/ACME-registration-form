@@ -74,9 +74,10 @@ border-radius: 7px;
   }
 `;
 
-export const InputText = styled.div`
+export const FormStyled = styled.div`
 padding-left: 18px;
-input {
+input,
+select {
   border: 1px solid #D2E3EB;
   color: #9FAAB8;
   width: 90%;
