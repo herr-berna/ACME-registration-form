@@ -1,4 +1,25 @@
-form {
+#error {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #FFC0C0;
+  color: #535336;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+}
+
+#success {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #C9FFC0;
+  color: #535336;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+}
+
+form,
+#error {
   padding-left: 18px;
 }
 

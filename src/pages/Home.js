@@ -37,18 +37,20 @@ const Home = () => {
         </MainButton>
       </Link>
       {/* Link para  lista de pacientes */}
-      <MainButton>
-        <img
-          src={search}
-          alt="Ver/editar pacientes"
-          style={{
-            width: "48px",
-            marginLeft: "-64px",
-            paddingRight: "6px"
-          }}
-        />
-        <span>Ver/editar pacientes</span>
-      </MainButton>
+      <Link to="ListPatients">
+        <MainButton>
+          <img
+            src={search}
+            alt="Ver/editar pacientes"
+            style={{
+              width: "48px",
+              marginLeft: "-64px",
+              paddingRight: "6px"
+            }}
+          />
+          <span>Ver/editar pacientes</span>
+        </MainButton>
+      </Link>
       <SecButton>
         <span>Sair</span>
       </SecButton>

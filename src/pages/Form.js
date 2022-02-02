@@ -5,7 +5,6 @@ import GlobalStyle from '../styles/globalStyle';
 import '../styles/Form.css'
 import { Title, SecButton } from '../styles/styles';
 
-
 class Form extends Component {
 
   constructor(props) {
@@ -31,6 +30,8 @@ class Form extends Component {
     })
     // Com isso, o atributo 'value' do <input> fullname agora é o que foi digitado pelo usuário, pois ele monitora aqui em cima.
   }
+
+
 
   handleBirthdayChange = e => {
     // O value em input type date sempre será no formato AAAA-MM-DD
@@ -68,9 +69,8 @@ class Form extends Component {
     })
   }
 
-
-
   handleSubmit = e => {
+
     e.preventDefault()
     // Já temos o objeto completo com os dados da form
     const formDataObject = this.state
@@ -82,16 +82,27 @@ class Form extends Component {
       // Verificando se CPF já existe
       // Iterando pelas keys através de seus índices
       for (let i = 0; i < localStorage.length; i++) {
-        // Faremos uma comparação do CPF com a Key
         let key = localStorage.key(i);
-        if (key === cpf) {
-          // Erro do CPF (errors += cpf...)
+        // Colocaremos todas as keys em uma array
+        let keyArray = []
+        keyArray.push(key)
+        // Verificando as keys na array
+        if (keyArray.includes(cpf)) {
+          // Erro: cpf igual
+          let error = document.querySelector('#error');
+          let msg = 'O CPF já está cadastrado!'
+          error.innerHTML = msg
+          break
         }
         else {
           // Pegamos o JSON -> stringify
           let formDataString = JSON.stringify(formDataObject)
           // Usamos o CPF como chave para guardar o objeto
           localStorage.setItem(cpf, formDataString)
+          // Avisamos que foi salvo com sucesso
+          let success = document.querySelector('#success');
+          let msg = 'Cadastro salvo com sucesso!'
+          success.innerHTML = msg
         }
       }
 
@@ -99,12 +110,13 @@ class Form extends Component {
       // Não há itens - Podemos adicionar esse registro. 
       let formDataString = JSON.stringify(formDataObject)
       localStorage.setItem(cpf, formDataString)
-      return (
-        <>
-        </>
-      )
+      // Avisamos que foi salvo com sucesso
+      let success = document.querySelector('#success');
+      let msg = 'Cadastro salvo com sucesso!'
+      success.innerHTML = msg
     }
   }
+
   render() {
 
     const { fullname, birthday, cpf, gender, address, status } = this.state
@@ -115,6 +127,8 @@ class Form extends Component {
         <Title>Cadastrar novo paciente
           <span>Preencha o formulário.</span>
         </Title>
+        <div id="error"></div>
+        <div id="success"></div>
         <form onSubmit={this.handleSubmit}>
           <label
             htmlFor="fullname"
@@ -125,6 +139,7 @@ class Form extends Component {
             value={fullname}
             onChange={this.handleFullnameChange}
             placeholder="Digite o nome completo..."
+            required
           />
           <label
             htmlFor="birthday"
@@ -134,6 +149,7 @@ class Form extends Component {
             id="birthday"
             value={birthday}
             onChange={this.handleBirthdayChange}
+            required
           />
           <label htmlFor="cpf">CPF*:</label>
           <input
@@ -143,6 +159,7 @@ class Form extends Component {
             value={cpf}
             onChange={this.handleCpfChange}
             placeholder="Digite o CPF (apenas números)"
+            required
           />
           <label htmlFor="gender">Gênero*: </label>
           <select
@@ -151,6 +168,7 @@ class Form extends Component {
             value={gender}
             onChange={this.handleGender}
             placeholder="Selecione o gênero"
+            required
           >
             <option value="m">Masculino</option>
             <option value="f">Feminino</option>
@@ -167,13 +185,14 @@ class Form extends Component {
             onChange={this.handleAddressChange}
             placeholder="Digite o endereço"
           />
-          <label htmlFor="status">Status        </label>
+          <label htmlFor="status">Status*: </label>
           <select
             id="status"
             name="status"
             value={status}
             onChange={this.handleStatusChange}
             placeholder="Selecione o status"
+            required
           >
             <option value="active">Ativo</option>
             <option value="inactive">Inativo</option>
