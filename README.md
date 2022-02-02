@@ -7,7 +7,7 @@ Também há um protótipo no <a href="https://www.figma.com/proto/Di4VNLODYRjpv4
 
 Este projeto foi desenvolvido de forma mobile-first, então a resolução sugerida de avaliação é de 360px de largura.
 
-A pasta /pdf/ contém um fluxograma explicando a lógica aplicada na validação do formulário.
+A pasta /pdf/ contém um fluxograma explicando a lógica aplicada na validação do formulário, <b>além do layout de uma futura versão desktop</b>.
 ## Dependências / Como iniciar este projeto
 
 Para este projeto, utilizei styled-components ^5.3.3 e react-router-dom ^6.2.1. Portanto, é necessário instalar essas duas bibliotecas em suas versões mais atualizadas.
