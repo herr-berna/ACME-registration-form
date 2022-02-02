@@ -16,21 +16,24 @@ export const Col = styled.div`
 
 export const Header = styled.div`
 height: 84px;
-border: 1px solid red;
 margin-bottom: 2.7rem;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 
 export const Title = styled.h1`
   font-size: 36px;
   margin: 1rem auto 3rem;
   padding-left: 1.5rem;
-  color: var(--main-color);
+  color: #012856;
   font-weight: 400;
   span {
     color: var(--secondary-color);
     display: block;
     font-size: 24px;
     font-weight: 500;
+    margin-top: .8rem;
   }
   p {
     font-size: 18px;
@@ -55,6 +58,11 @@ border-radius: 7px;
     font-weight: 500;
     margin-left: .7rem;
   }
+  &:hover,
+  &:active {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px;
+  }
 `;
 
 export const SecButton = styled.button`
@@ -71,6 +79,11 @@ border-radius: 7px;
     color: #55B995;
     font-size: 18px;
     font-weight: 500;
+  };
+  &:hover,
+  &:active {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px;
   }
 `;
 
@@ -104,4 +117,3 @@ background-color: #012856;
 bottom: 0;
 left: 0;
 `;
-// export const FlexWrapper = 

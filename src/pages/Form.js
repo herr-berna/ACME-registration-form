@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import GlobalStyle from '../styles/globalStyle';
 import '../styles/Form.css'
-import { Title, SecButton } from '../styles/styles';
+import { Title, SecButton, Header, Footer } from '../styles/styles';
+import logo from '../img/logo.png'
 
 class Form extends Component {
 
@@ -124,6 +125,9 @@ class Form extends Component {
     return (
       <>
         <GlobalStyle />
+        <Header><img
+          src={logo} alt="Interprocess logo"
+          style={{ maxWidth: '250px' }} /></Header>
         <Title>Cadastrar novo paciente
           <span>Preencha o formulário.</span>
         </Title>
@@ -194,12 +198,13 @@ class Form extends Component {
             placeholder="Selecione o status"
             required
           >
-            <option value="active">Ativo</option>
-            <option value="inactive">Inativo</option>
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo">Inativo</option>
           </select>
 
           <SecButton type="submit">Enviar</SecButton>
         </form>
+        <Footer></Footer>
       </>
     );
   }

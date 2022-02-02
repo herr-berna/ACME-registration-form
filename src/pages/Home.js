@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import GlobalStyle from '../styles/globalStyle';
 import addnew from '../img/addnew.png';
 import search from '../img/search.png'
+import logo from '../img/logo.png'
 
 const Home = () => {
   return (
@@ -14,7 +15,9 @@ const Home = () => {
       {/* Elemento Router cobre os outros */}
 
       <Header>
-        <span>logo</span>
+        <img
+          src={logo} alt="Interprocess logo"
+          style={{ maxWidth: '250px' }} />
       </Header>
       <Title>
         Bem-vindo,
@@ -22,7 +25,7 @@ const Home = () => {
         <p>Selecione uma opção para continuar.</p>
       </Title>
       {/* Link para o Form */}
-      <Link to="Form">
+      <Link to="Form" style={{ textDecoration: 'none' }}>
         <MainButton>
           <img
             src={addnew}
@@ -37,7 +40,7 @@ const Home = () => {
         </MainButton>
       </Link>
       {/* Link para  lista de pacientes */}
-      <Link to="ListPatients">
+      <Link to="ListPatients" style={{ textDecoration: 'none' }}>
         <MainButton>
           <img
             src={search}
